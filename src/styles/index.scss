@@ -1,13 +1,77 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+html{
+    font-size: 25px;
+}
+body{
+    background: #4cc9da;
+    font-family: 'Amatic SC', cursive;
+}
 
-*/
+h1{
+    font-size: 2.25rem;
+    font-family: 'Amatic SC', cursive;
+}
+
+.wrap{
+    height: 100vh;
+    width: 100vw;
+}
+
+.todo-container{
+    width: 100%;
+    max-width: 500px;
+}
+
+li {
+    line-height: 25px;
+    &.list-group-item{
+        display: flex;
+    }
+    &:hover span.delete{
+        display: inline-block;
+    }
+    span.delete{
+        display: none;
+        cursor: pointer;
+        font-family: cursive;
+        font-size: 20px;
+    }
+}
+
+.footer {
+    &:before{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 50px;
+        overflow: hidden;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.status{
+    width: 25px;
+    height: 25px;
+    &.done{
+        &:after{
+            content: '\2713';
+            font-size: 35px;
+            color: rgb(0, 255, 85);
+            top: 10px;
+            left: 28px;
+            position: absolute;
+            transform: rotate(11deg);
+        }
+    }
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 0;
+}
